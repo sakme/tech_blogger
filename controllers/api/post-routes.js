@@ -1,15 +1,24 @@
 const router = require('express').Router();
-const { Post, User } = require('../../models');
+const { User, Post, Comment } = require('../../models');
 
 router.get('/', (req, res) => {
     Post.findAll({
-        attributes: ['id','title','post_text','created_at'],
-        include: [
-            {
-                model: User,
-                attributes: ['username']
-            }
-        ]
+      order: [['created_at', 'desc']],
+      attributes: ['id','title','post_text','created_at'],
+      include: [
+        {
+          model: Comment,
+          attributes: ['id','comment_text','post_id','user_id','created_at'],
+          include: {
+            model: User,
+            attributes: ['username']
+          }
+        },
+        {
+            model: User,
+            attributes: ['username']
+        }
+      ]
     })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -20,16 +29,24 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
     Post.findOne({
-        where: {
-            id: req.params.id
+      where: {
+          id: req.params.id
+      },
+      attributes: ['id','title','post_text','created_at'],
+      include: [
+        {
+          model: Comment,
+          attributes: ['id','comment_text','post_id','user_id','created_at'],
+          include: {
+            model: User,
+            attributes: ['username']
+          }
         },
-        attributes: ['id','title','post_text','created_at'],
-        include: [
-            {
-                model: User,
-                attributes: ['username']
-            }
-        ]
+        {
+            model: User,
+            attributes: ['username']
+        }
+      ]
     })
     .then(dbPostData => {
       if (!dbPostData) {
