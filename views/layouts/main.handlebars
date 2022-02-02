@@ -13,10 +13,14 @@
         <header>
             <div class="nav">
                 <nav>
-                    <a href="#">Home</a>
-                    <a href="#">Dashboard</a>
-                    <a href="#">Login</a>
-                    <a href="#">Logout</a>
+                    <a href="/">Home</a>
+                    {{#if loggedIn}}
+                    <a href="/dashboard">Dashboard</a>
+                    <button id="logout" class="btn_logout">Logout</button>
+                    {{else}}
+                    <a href="/login">Login</a>
+                    {{/if}}
+
                 </nav>
             </div>
             <div class="break"></div>
@@ -33,6 +37,9 @@
             Thanks for visiting!
         </footer>
     </div>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
 
 </body>
 

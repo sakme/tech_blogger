@@ -92,7 +92,7 @@
     width: 100%;
   }
   
-  header h1, header a {
+  header h1, header a, .btn_logout {
     font-size: 1.5em;
     padding: 5px 10px;
     color: var(--secondary-color);
@@ -106,7 +106,7 @@
     margin-left: 20px;
   }
 
-  header nav a {
+  header nav a, .btn_logout {
     background-color: var(--secondary-color);
     color: var(--primary-color);
     font-weight: lighter;
@@ -126,7 +126,7 @@
     padding: 2% 4%;
   }
   
-  .btn-no-style {
+  /* .btn-no-style {
     background: none;
     border: none;
     padding: 0;
@@ -137,7 +137,7 @@
     font-weight: bold;
     transition: color .1s;
     margin-left: 16px;
-  }
+  } */
   
   .btn-no-style:hover {
     background: none;
@@ -151,11 +151,58 @@
   .delete-post-btn:hover {
     background-color: #ff643d;
   }
+
+  .login-form, .signup-form {
+    margin-bottom: 2%;
+    line-height: 150%;
+    border: 3px solid var(--secondary-color);
+  }
   
   .post {
     margin-bottom: 2%;
     line-height: 150%;
     border: 3px solid var(--secondary-color);
+  }
+
+  .login-form-title, .signup-form-title {
+    font-weight: lighter;
+    font-size: 1.25em;
+    padding: 10px 10px 10px 20px;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    display: flex;
+  }
+
+  .email-login, .password-login, .username-signup, .email-signup, .password-signup {
+    font-weight: lighter;
+    font-size: 1.25em;
+    margin: 0px 0px 0px 25px;
+    color: var(--secondary-color);
+  }
+
+  #email-login, #password-login, #username-signup, #email-signup, #password-signup {
+    font-weight: lighter;
+    font-size: 1.25em;
+    margin: 0px 0px 0px 20px;
+    color: var(--secondary-color);
+    background-color: #ffffff;
+    width: 90%
+  }
+
+  .button-login, .button-signup {
+    font-weight: lighter;
+    font-size: 1.25em;
+    margin: 0px 0px 0px 20px;
+    color: var(--primary-color);
+    background-color: #5d5d5d;
+    width: 90%
+  }
+
+  .signup, .login {
+    font-weight: lighter;
+    font-size: 1.25em;
+    margin: 0px 0px 0px 25px;
+    color: blue;
   }
   
   .post .title {
