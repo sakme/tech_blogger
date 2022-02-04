@@ -20,8 +20,15 @@
     <ul class="post-list">
         {{#each posts as |post|}}
         <li>
-            {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+            <article class="post">
+                <div class="title">
+                    <a href="/dashboard/edit/{{post.id}}">{{title}}</a>
+                    <span>Posted by {{user.username}} on {{format_date created_at}}</span>
+                </div>
+                <div class="postText">
+                    <p>{{post_text}}</p>
+                </div>
+            </article>
         </li>
         {{/each}}
     </ul>

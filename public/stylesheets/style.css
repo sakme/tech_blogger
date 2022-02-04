@@ -149,19 +149,23 @@
     border: 3px solid var(--secondary-color);
   }
   
-  .post, .new-post-form {
+  .post, .new-post-form, .comment-form, .comment, .edit-post-form {
     margin-bottom: 2%;
     line-height: 150%;
     border: 3px solid var(--secondary-color);
   }
 
-  .login-form-title, .signup-form-title {
+  .login-form-title, .signup-form-title, .comment-form-title {
     font-weight: lighter;
     font-size: 1.25em;
     padding: 10px 10px 10px 20px;
     color: var(--primary-color);
     background-color: var(--secondary-color);
     display: flex;
+  }
+
+  .comment-form-title, .comment-title {
+    height: 40px;
   }
 
   .email-login, .password-login, .username-signup, .email-signup, .password-signup {
@@ -180,18 +184,22 @@
     width: 90%
   }
 
-  .button-login, .button-signup, .btn-post  {
+  .button-login, .button-signup, .btn-post, .comment-button, .save-post-button, .delete-post-button  {
     font-weight: lighter;
     font-size: 1.25em;
     margin: 0px 0px 0px 20px;
     color: var(--primary-color);
     background-color: #5d5d5d;
-    width: 90%
+    width: 97%
+  }
+
+  .save-post-button, .delete-post-button {
+    margin-bottom: 5px;
   }
 
   .btn-post {
     margin: 0 10px 10px 10px;
-    width: 98%;
+    width: 97%;
   }
 
   .signup, .login {
@@ -201,7 +209,7 @@
     color: blue;
   }
   
-  .post .title, .new-post-form .title {
+  .post .title, .new-post-form .title, .edit-title {
     font-weight: lighter;
     font-size: 1.25em;
     padding: 10px 10px 10px 20px;
@@ -221,21 +229,37 @@
     font-size: .6em;
   }
 
-  #post-title, .new-post-form textarea, .new-post-form label {
+  .comment-title {
+    width: 100%;
+    text-align: right;
+    font-size: .6em;
+    font-weight: lighter;
+    padding: 10px 10px 10px 20px;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    display: flex;
+  }
+
+  #post-title, #edit-title, .new-post-form textarea, .new-post-form label, .comment-form textarea, .edit-post-form label, .edit-post-form textarea {
     margin: 0 10px;
     font-weight: lighter;
     font-size: 1.25em;
     width: 98%;
   }
-
   .postText {
     padding: 0 10px;
     font-size: 1em;
   }
+
+  .comment-text {
+    padding: 0 20px;
+    font-size: 1em;
+  }
   
-  .edit-link {
+  .return-link {
     display: block;
     margin: -1.5% 0 2% 0;
+    color: var(--secondary-color);
   }
   
   .upvote-btn {
@@ -251,22 +275,22 @@
     margin-bottom: 5%;
   }
   
-  .comment {
+  /* .comment {
     padding: 1%;
     margin-bottom: 1%;
-  }
+  } */
   
-  .comment:nth-child(odd) {
+  /* .comment:nth-child(odd) {
     background-color: #fff5eb;
-  }
+  } */
   
-  .comment .meta {
+  /* .comment .meta {
     font-size: 90%;
     margin-bottom: .5%;
     opacity: .6;
-  }
+  } */
   
-  .new-post-form input {
+  .new-post-form input, .edit-post-form input {
     width: 300px;
   }
   
