@@ -7,9 +7,8 @@
     "node": ">=15.0.0"
   },
   "scripts": {
-    "start": "nodemon server.js",
-    "test": "jest",
-    "seed": "node seeds/index.js"
+    "start": "node server.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
